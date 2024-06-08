@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clickCount++;
     });
   });
-
+  k;
   button.addEventListener('click', () => {
     slots.forEach((slot) => {
       slot.textContent = '';
