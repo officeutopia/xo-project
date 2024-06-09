@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let turn = content[(clickCount + 1) % 2];
   let currentPlayer = document.getElementById('playerTurn');
   const button = document.getElementById('resetButton');
+  winnerTitle = document.getElementById('winnerTitle');
   let gameEnded = false;
 
   slots.forEach((slot) => {
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!gameEnded && slot.textContent === '') {
         slot.textContent = content[clickCount % 2];
         turn = content[(clickCount + 1) % 2];
-        currentPlayer.textContent = `Player ${turn}'s turn`;
+        currentPlayer.textContent = `Next Player ${turn}`;
         clickCount++;
         checkIfWin();
       }
@@ -22,10 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
   button.addEventListener('click', () => {
     slots.forEach((slot) => {
       slot.textContent = '';
+      slot.classList.remove('winning-slot', 'non-winning-slot');
     });
     clickCount = 0;
+    currentPlayer.classList.remove('victory');
     turn = content[clickCount % 2];
-    currentPlayer.textContent = `Player ${turn}'s turn`;
+    currentPlayer.textContent = ` Next Player ${turn}`;
     gameEnded = false;
   });
 
@@ -47,6 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
         gameEnded = true;
         displayResult(board[a]);
+        slots[a].classList.add('winning-slot');
+        slots[b].classList.add('winning-slot');
+        slots[c].classList.add('winning-slot');
+        slots.forEach((slot, index) => {
+          if (!line.includes(index)) {
+            slot.classList.add('non-winning-slot');
+          }
+        });
         slots.forEach((slot) => slot.removeEventListener('click', () => {}));
         break;
       }
@@ -56,5 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function displayResult(winner) {
     console.log(`Player ${winner} wins!`);
     currentPlayer.textContent = `Player ${winner} wins!`;
+    currentPlayer.classList.add('victory');
   }
 });

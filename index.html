@@ -5,33 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XOXO</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <script src="script.js"></script>
   </head>
   <body class="cover">
     <header>
       <h1>-Tic Tac Toe-</h1>
+      <!-- class="animate_animated animate__lightSpeedInRight" -->
     </header>
     <main>
       <h3 id="playerTurn">&nbsp;</h3>
+      <h3 id="winnerTitle" class="victory"></h3>
 
       <div>
         <table class="table">
           <tr>
-            <td id="0"></td>
-            <td id="1"></td>
-            <td id="2"></td>
+            <td id="0" class="slot"></td>
+            <td id="1" class="slot"></td>
+            <td id="2" class="slot"></td>
           </tr>
 
           <tr>
-            <td id="3"></td>
-            <td id="4"></td>
-            <td id="5"></td>
+            <td id="3" class="slot"></td>
+            <td id="4" class="slot"></td>
+            <td id="5" class="slot"></td>
           </tr>
 
           <tr>
-            <td id="6"></td>
-            <td id="7"></td>
-            <td id="8"></td>
+            <td id="6" class="slot"></td>
+            <td id="7" class="slot"></td>
+            <td id="8" class="slot"></td>
           </tr>
         </table>
       </div>

@@ -26,6 +26,9 @@ h1 {
   font-family: monospace;
   color: white;
   margin: 20px;
+  display: inline-block;
+  animation: bounceInDown;
+  animation-duration: 1.5s;
 }
 
 h3 {
@@ -75,4 +78,22 @@ button {
   color: white;
   border-color: burlywood;
   cursor: pointer;
+}
+
+.winning-slot {
+  background-color: rgba(255, 105, 180, 0.5);
+}
+
+.non-winning-slot {
+  filter: blur(2px);
+}
+.victory {
+  text-align: center;
+  font-size: 28px;
+  font-family: monospace;
+  font-weight: 900;
+  color: lightblue;
+  margin: 10px;
+  animation: heartBeat;
+  animation-duration: 4s;
 }
