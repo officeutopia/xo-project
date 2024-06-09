@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
   button.addEventListener('click', () => {
     slots.forEach((slot) => {
       slot.textContent = '';
