@@ -1,0 +1,15 @@
+{
+  "cSpell.words": ["XOXO"],
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5433,
+      "driver": "PostgreSQL",
+      "name": "TEST",
+      "database": "tictactoe",
+      "username": "postgres",
+      "password": "taltulWants$"
+    }
+  ]
+}
