@@ -6,7 +6,7 @@ body {
 }
 
 .cover {
-  background-image: url('./game-planet.avif');
+  background-image: url('../assets/game-planet.avif');
   background-size: cover;
   background-repeat: space;
   background-position: center;
